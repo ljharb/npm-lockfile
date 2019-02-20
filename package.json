@@ -21,5 +21,13 @@
 	"bugs": {
 		"url": "https://github.com/ljharb/npm-lockfile/issues"
 	},
-	"homepage": "https://github.com/ljharb/npm-lockfile#readme"
+	"homepage": "https://github.com/ljharb/npm-lockfile#readme",
+	"dependencies": {
+		"chalk": "^2.4.2",
+		"node-cleanup": "^2.1.2",
+		"rimraf": "^2.6.3",
+		"semver": "^5.6.0",
+		"tmp": "0.0.33",
+		"util.promisify": "^1.0.0"
+	}
 }
