@@ -1,0 +1,25 @@
+{
+	"name": "npm-lockfile",
+	"version": "0.0.0",
+	"description": "Safely generate an npm lockfile and output it to the filename of your choice.",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ljharb/npm-lockfile.git"
+	},
+	"keywords": [
+		"npm",
+		"package-lock",
+		"npm-shrinkwrap",
+		"shrinkwrap",
+		"lockfile"
+	],
+	"author": "Jordan Harband <ljharb@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ljharb/npm-lockfile/issues"
+	},
+	"homepage": "https://github.com/ljharb/npm-lockfile#readme"
+}
