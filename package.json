@@ -2,6 +2,7 @@
 	"name": "npm-lockfile",
 	"version": "0.0.0",
 	"description": "Safely generate an npm lockfile and output it to the filename of your choice.",
+	"bin": "./bin.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
@@ -24,6 +25,7 @@
 	"homepage": "https://github.com/ljharb/npm-lockfile#readme",
 	"dependencies": {
 		"chalk": "^2.4.2",
+		"find-package-json": "^1.2.0",
 		"fs-copy-file": "^2.1.2",
 		"is-date-object": "^1.0.1",
 		"node-cleanup": "^2.1.2",
@@ -31,6 +33,10 @@
 		"rimraf": "^2.6.3",
 		"semver": "^5.6.0",
 		"tmp": "0.0.33",
-		"util.promisify": "^1.0.0"
+		"util.promisify": "^1.0.0",
+		"yargs": "^13.2.1"
+	},
+	"engines": {
+		"node": ">= 6"
 	}
 }
