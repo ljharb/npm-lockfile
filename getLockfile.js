@@ -21,9 +21,13 @@ module.exports = function getLockfile(packageFile, date, logger = () => {}) {
 	}
 	const tmpDirP = getProjectTempDir();
 	const dateStr = (date || new Date()).toISOString();
+	const npmRC = path.join(path.dirname(packageFile), '.npmrc');
 	const copyPkg = tmpDirP.then(tmpDir => {
 		logger(chalk.blue(`Creating \`package.json\` in temp dir for ${dateStr} lockfile`));
-		return copyFile(packageFile, path.join(tmpDir, 'package.json'));
+		return Promise.all([
+			copyFile(packageFile, path.join(tmpDir, 'package.json')),
+			copyFile(npmRC, path.join(tmpDir, '.npmrc'))
+		]);
 	});
 	return Promise.all([tmpDirP, copyPkg]).then(([tmpDir]) => new Promise((resolve, reject) => {
 		const PATH = path.join(tmpDir, '../node_modules/.bin');
