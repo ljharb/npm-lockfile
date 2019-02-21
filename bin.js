@@ -25,7 +25,12 @@ const {
 		type: 'string',
 		describe: '“now”, or a date (same format as `new Date()`)',
 		demandOption: true,
-		coerce: function (arg) { return arg === 'now' ? arg : new Date(arg); }
+		coerce: function (arg) {
+			if (arg !== 'now' && !new Date(arg).getTime()) {
+				throw new TypeError('`date` must be “now” or a valid format for `new Date`');
+			}
+			return arg;
+		}
 	})
 	.option('package', {
 		type: 'string',
