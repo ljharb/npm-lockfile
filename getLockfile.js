@@ -28,11 +28,14 @@ module.exports = function getLockfile(packageFile, date, logger = () => {}) {
 	return Promise.all([tmpDirP, copyPkg]).then(([tmpDir]) => new Promise((resolve, reject) => {
 		const PATH = path.join(tmpDir, '../node_modules/.bin');
 		logger(chalk.blue(`Running npm install to create lockfile for ${dateStr}...`));
-		exec(`PATH=${PATH}:\$PATH npm install --package-lock-only --before=${dateStr}`, { cwd: tmpDir }, (err) => {
-			if (err) { reject(err); }
-			else { resolve(tmpDir); }
+		exec(`PATH=${PATH}:$PATH npm install --package-lock-only --before=${dateStr}`, { cwd: tmpDir }, err => {
+			if (err) {
+				reject(err);
+			} else {
+				resolve(tmpDir);
+			}
 		});
-	})).then((tmpDir) => {
+	})).then(tmpDir => {
 		logger(chalk.blue(`Reading lockfile contents for ${dateStr}...`));
 		const lockfile = path.join(tmpDir, 'package-lock.json');
 		return readFile(lockfile, { encoding: 'utf-8' });

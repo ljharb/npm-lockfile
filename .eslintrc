@@ -1,0 +1,27 @@
+{
+	"root": true,
+	"extends": "@ljharb",
+	"parserOptions": {
+		"ecmaVersion": "2018"
+	},
+	"env": {
+		"es6": true
+	},
+	"rules": {
+		"consistent-return": 1,
+		"dot-notation": [2, { "allowKeywords": true }],
+		"func-name-matching": 0,
+		"max-nested-callbacks": 0,
+		"max-params": [2, 4],
+		"no-console": 0,
+		"sort-keys": 0,
+	},
+	"overrides": [
+		{
+			"files": "test*",
+			"rules": {
+				"max-nested-callbacks": 0,
+			},
+		},
+	],
+}

@@ -13,26 +13,28 @@ const writeFile = promisify(require('fs').writeFile);
 
 const npmNeeded = '^6.9.0-0';
 const pkgContents = {
-	private: true,
+	'private': true,
 	name: 'npm-jail',
 	dependencies: {
-		npm: npmNeeded,
+		npm: npmNeeded
 	}
 };
 
 const cleanupHandlers = [];
-function finalCleanup() {
+const finalCleanup = function finalCleanup() {
 	for (let i = 0; i < cleanupHandlers.length; ++i) {
 		cleanupHandlers[i]();
 	}
-}
+};
 
 let rootTempDir;
-function getRootTempDir(logger = () => {}) {
+const getRootTempDir = function getRootTempDir(logger = () => {}) {
 	if (!rootTempDir) {
 		logger(chalk.blue('Creating root temp directory, to hold temporary lockfiles...'));
 		rootTempDir = new Promise((resolve, reject) => tmp.dir((err, tmpDir, cleanup) => {
-			if (err) { return reject(err); }
+			if (err) {
+				return reject(err);
+			}
 			resolve(tmpDir);
 			cleanupHandlers.push(cleanup);
 			nodeCleanup(finalCleanup);
@@ -44,9 +46,13 @@ function getRootTempDir(logger = () => {}) {
 					path.join(tmpDir, 'package.json'),
 					JSON.stringify(pkgContents)
 				).then(() => new Promise((resolve, reject) => {
-					cleanupHandlers.unshift(() => { rimraf.sync(path.join(tmpDir, '*')); });
-					exec(`npm install --no-package-lock --silent >/dev/null`, { cwd: tmpDir }, (err) => {
-						if (err) { return reject(err); }
+					cleanupHandlers.unshift(() => {
+						rimraf.sync(path.join(tmpDir, '*'));
+					});
+					exec('npm install --no-package-lock --silent >/dev/null', { cwd: tmpDir }, err => {
+						if (err) {
+							return reject(err);
+						}
 						resolve(tmpDir);
 					});
 				}));
@@ -55,13 +61,15 @@ function getRootTempDir(logger = () => {}) {
 		});
 	}
 	return rootTempDir;
-}
+};
 
 module.exports = function getProjectTempDir(logger = undefined) {
 	return getRootTempDir(logger).then(rootDir => {
 		const projectDir = path.join(rootDir, 'XXXXXX');
 		return new Promise((resolve, reject) => tmp.dir({ template: projectDir }, (err, tmpDir, cleanup) => {
-			if (err) { return reject(err); }
+			if (err) {
+				return reject(err);
+			}
 			resolve(tmpDir);
 			cleanupHandlers.unshift(cleanup);
 		}));
