@@ -30,7 +30,7 @@ const getRootTempDir = function getRootTempDir(npmNeeded, logger = () => {}) {
 			cleanupHandlers.push(cleanup);
 			nodeCleanup(finalCleanup);
 		})).then(tmpDir => {
-			const npmV = execSync('npm --version', { encoding: 'utf-8', cwd: tmpDir });
+			const npmV = execSync('npm --version', { encoding: 'utf-8', cwd: tmpDir }).trim();
 			logger(`${chalk.blue('Checking npm version:')} \`npm --version\` -> v${npmV}`);
 			if (!semver.satisfies(npmV, npmNeeded)) {
 				const pkgContents = {
