@@ -11,15 +11,6 @@ const path = require('path');
 const { exec, execSync } = require('child_process');
 const writeFile = promisify(require('fs').writeFile);
 
-const npmNeeded = '^6.9.0-0';
-const pkgContents = {
-	'private': true,
-	name: 'npm-jail',
-	dependencies: {
-		npm: npmNeeded
-	}
-};
-
 const cleanupHandlers = [];
 const finalCleanup = function finalCleanup() {
 	for (let i = 0; i < cleanupHandlers.length; ++i) {
@@ -28,7 +19,7 @@ const finalCleanup = function finalCleanup() {
 };
 
 let rootTempDir;
-const getRootTempDir = function getRootTempDir(logger = () => {}) {
+const getRootTempDir = function getRootTempDir(npmNeeded, logger = () => {}) {
 	if (!rootTempDir) {
 		logger(chalk.blue('Creating root temp directory, to hold temporary lockfiles...'));
 		rootTempDir = new Promise((resolve, reject) => tmp.dir((err, tmpDir, cleanup) => {
@@ -42,6 +33,13 @@ const getRootTempDir = function getRootTempDir(logger = () => {}) {
 			var npmV = execSync('npm --version', { encoding: 'utf-8', cwd: tmpDir });
 			logger(`${chalk.blue('Checking npm version:')} \`npm --version\` -> v${npmV}`);
 			if (!semver.satisfies(npmV, npmNeeded)) {
+				const pkgContents = {
+					'private': true,
+					name: 'npm-jail',
+					dependencies: {
+						npm: npmNeeded
+					}
+				};
 				return writeFile(
 					path.join(tmpDir, 'package.json'),
 					JSON.stringify(pkgContents)
@@ -63,8 +61,8 @@ const getRootTempDir = function getRootTempDir(logger = () => {}) {
 	return rootTempDir;
 };
 
-module.exports = function getProjectTempDir(logger = undefined) {
-	return getRootTempDir(logger).then(rootDir => {
+module.exports = function getProjectTempDir({ npmNeeded = '^6.9.0-0', logger = undefined } = {}) {
+	return getRootTempDir(npmNeeded, logger).then(rootDir => {
 		const projectDir = path.join(rootDir, 'XXXXXX');
 		return new Promise((resolve, reject) => tmp.dir({ template: projectDir }, (err, tmpDir, cleanup) => {
 			if (err) {

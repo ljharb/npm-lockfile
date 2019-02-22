@@ -11,14 +11,14 @@ const readFile = promisify(require('fs').readFile);
 
 const getProjectTempDir = require('./getProjectTempDir');
 
-module.exports = function getLockfile(packageFile, date, logger = () => {}) {
+module.exports = function getLockfile(packageFile, date, { npmNeeded, logger = () => {} } = {}) {
 	if (typeof packageFile !== 'string' || packageFile.length === 0) {
 		return Promise.reject(chalk.red(`\`packageFile\` must be a non-empty string; got ${inspect(packageFile)}`));
 	}
 	if (typeof date !== 'undefined' && !new Date(date).getTime()) {
 		return Promise.reject(chalk.red(`\`date\` must be a valid Date format if provided; got ${inspect(date)}`));
 	}
-	const tmpDirP = getProjectTempDir();
+	const tmpDirP = getProjectTempDir({ npmNeeded, logger });
 	const npmRC = path.join(path.dirname(packageFile), '.npmrc');
 	const copyPkg = tmpDirP.then(tmpDir => {
 		logger(chalk.blue(`Creating \`package.json\` in temp dir for ${date || '“now”'} lockfile`));

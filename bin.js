@@ -46,7 +46,7 @@ const {
 		demandOption: true
 	});
 
-getLockfile(pkg, date === 'now' ? undefined : date, console.log.bind(console))
+getLockfile(pkg, date === 'now' ? undefined : date, { logger: console.log.bind(console), npmNeeded: '^6.9.0-0' })
 	.then(lockfile => writeFile(output, lockfile))
 	.then(() => { console.log(chalk.green('Lockfile contents written!')); })
 	.catch(err => console.error(err));
