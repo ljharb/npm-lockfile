@@ -30,15 +30,15 @@ const getRootTempDir = function getRootTempDir(npmNeeded, logger = () => {}) {
 			cleanupHandlers.push(cleanup);
 			nodeCleanup(finalCleanup);
 		})).then(tmpDir => {
-			var npmV = execSync('npm --version', { encoding: 'utf-8', cwd: tmpDir });
+			const npmV = execSync('npm --version', { encoding: 'utf-8', cwd: tmpDir });
 			logger(`${chalk.blue('Checking npm version:')} \`npm --version\` -> v${npmV}`);
 			if (!semver.satisfies(npmV, npmNeeded)) {
 				const pkgContents = {
-					'private': true,
+					private: true,
 					name: 'npm-jail',
 					dependencies: {
-						npm: npmNeeded
-					}
+						npm: npmNeeded,
+					},
 				};
 				return writeFile(
 					path.join(tmpDir, 'package.json'),

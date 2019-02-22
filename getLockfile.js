@@ -24,7 +24,7 @@ module.exports = function getLockfile(packageFile, date, { npmNeeded, logger = (
 		logger(chalk.blue(`Creating \`package.json\` in temp dir for ${date || '“now”'} lockfile`));
 		return Promise.all([
 			copyFile(packageFile, path.join(tmpDir, 'package.json')),
-			copyFile(npmRC, path.join(tmpDir, '.npmrc'))
+			copyFile(npmRC, path.join(tmpDir, '.npmrc')),
 		]);
 	});
 	return Promise.all([tmpDirP, copyPkg]).then(([tmpDir]) => new Promise((resolve, reject) => {

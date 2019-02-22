@@ -17,33 +17,33 @@ const {
 	argv: {
 		output,
 		date,
-		'package': pkg
-	}
+		package: pkg,
+	},
 } = require('yargs')
 	.help()
 	.option('date', {
 		type: 'string',
 		describe: '“now”, or a date (same format as `new Date()`)',
 		demandOption: true,
-		coerce: function (arg) {
+		coerce(arg) {
 			if (arg !== 'now' && !new Date(arg).getTime()) {
 				throw new TypeError('`date` must be “now” or a valid format for `new Date`');
 			}
 			return arg;
-		}
+		},
 	})
 	.option('package', {
 		type: 'string',
 		describe: 'path to a `package.json` file',
 		normalize: true,
-		coerce: function (arg) { return path.resolve(arg); }
+		coerce(arg) { return path.resolve(arg); },
 	})
 	.default('package', filename, path.relative(process.cwd(), filename))
 	.option('output', {
 		alias: 'o',
 		describe: 'output file path',
 		normalize: true,
-		demandOption: true
+		demandOption: true,
 	});
 
 getLockfile(pkg, date === 'now' ? undefined : date, { logger: console.log.bind(console), npmNeeded: '^6.9.0-0' })
