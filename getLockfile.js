@@ -30,7 +30,7 @@ module.exports = function getLockfile(packageFile, date, { npmNeeded, logger = (
 	return Promise.all([tmpDirP, copyPkg]).then(([tmpDir]) => new Promise((resolve, reject) => {
 		const PATH = path.join(tmpDir, '../node_modules/.bin');
 		logger(chalk.blue(`Running npm install to create lockfile for ${date || '“now”'}...`));
-		exec(`PATH=${PATH}:$PATH npm install --package-lock-only${date ? ` --before=${date}` : ''}`, { cwd: tmpDir }, err => {
+		exec(`PATH=${PATH}:$PATH npm install --package-lock --package-lock-only${date ? ` --before=${date}` : ''}`, { cwd: tmpDir }, err => {
 			if (err) {
 				reject(err);
 			} else {
