@@ -37,10 +37,10 @@
 		"node-cleanup": "^2.1.2",
 		"object-inspect": "^1.6.0",
 		"rimraf": "^2.6.3",
-		"semver": "^5.6.0",
-		"tmp": "0.0.33",
+		"semver": "^5.7.0",
+		"tmp": "^0.1.0",
 		"util.promisify": "^1.0.0",
-		"yargs": "^13.2.1"
+		"yargs": "^13.3.0"
 	},
 	"engines": {
 		"node": ">= 6"
