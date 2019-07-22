@@ -5,8 +5,9 @@ const { exec } = require('child_process');
 const promisify = require('util.promisify');
 const inspect = require('object-inspect');
 const chalk = require('chalk');
+const copyFileCB = require('fs-copy-file');
 
-const copyFile = promisify(require('fs-copy-file'));
+const copyFile = promisify(copyFileCB);
 const readFile = promisify(require('fs').readFile);
 
 const getProjectTempDir = require('./getProjectTempDir');
@@ -24,7 +25,11 @@ module.exports = function getLockfile(packageFile, date, { npmNeeded, logger = (
 		logger(chalk.blue(`Creating \`package.json\` in temp dir for ${date || '“now”'} lockfile`));
 		return Promise.all([
 			copyFile(packageFile, path.join(tmpDir, 'package.json')),
-			copyFile(npmRC, path.join(tmpDir, '.npmrc')),
+			copyFile(npmRC, path.join(tmpDir, '.npmrc')).catch(err => {
+				if (!err || !(/^ENOENT: no such file or directory/).test(err.message)) {
+					throw err;
+				}
+			}),
 		]);
 	});
 	return Promise.all([tmpDirP, copyPkg]).then(([tmpDir]) => new Promise((resolve, reject) => {
