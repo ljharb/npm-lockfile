@@ -1,59 +1,62 @@
 {
-	"name": "npm-lockfile",
-	"version": "2.0.2",
-	"description": "Safely generate an npm lockfile and output it to the filename of your choice.",
-	"bin": "./bin.js",
-	"scripts": {
-		"version": "auto-changelog && git add CHANGELOG.md",
-		"postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\"",
-		"lint": "eslint .",
-		"pretest": "npm run lint",
-		"test": "npm run tests-only",
-		"tests-only": "node test",
-		"posttest": "npx aud"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/ljharb/npm-lockfile.git"
-	},
-	"keywords": [
-		"npm",
-		"package-lock",
-		"npm-shrinkwrap",
-		"shrinkwrap",
-		"lockfile"
-	],
-	"author": "Jordan Harband <ljharb@gmail.com>",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/ljharb/npm-lockfile/issues"
-	},
-	"homepage": "https://github.com/ljharb/npm-lockfile#readme",
-	"dependencies": {
-		"chalk": "^2.4.2",
-		"find-package-json": "^1.2.0",
-		"fs-copy-file": "^2.1.2",
-		"node-cleanup": "^2.1.2",
-		"object-inspect": "^1.6.0",
-		"rimraf": "^2.6.3",
-		"semver": "^5.7.0",
-		"tmp": "^0.1.0",
-		"util.promisify": "^1.0.0",
-		"yargs": "^13.3.0"
-	},
-	"engines": {
-		"node": ">= 6"
-	},
-	"devDependencies": {
-		"@ljharb/eslint-config": "^13.1.1",
-		"auto-changelog": "^1.14.1",
-		"eslint": "^5.16.0",
-		"tape": "^4.11.0"
-	},
-	"auto-changelog": {
-		"output": "CHANGELOG.md",
-		"unreleased": false,
-		"commitLimit": false,
-		"backfillLimit": false
-	}
+  "name": "npm-lockfile",
+  "version": "2.0.2",
+  "description": "Safely generate an npm lockfile and output it to the filename of your choice.",
+  "bin": "./bin.js",
+  "scripts": {
+    "version": "auto-changelog && git add CHANGELOG.md",
+    "postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\"",
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "npm run tests-only",
+    "tests-only": "node test",
+    "posttest": "npx aud"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ljharb/npm-lockfile.git"
+  },
+  "keywords": [
+    "npm",
+    "package-lock",
+    "npm-shrinkwrap",
+    "shrinkwrap",
+    "lockfile"
+  ],
+  "author": "Jordan Harband <ljharb@gmail.com>",
+  "funding": {
+    "url": "https://github.com/sponsors/ljharb"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ljharb/npm-lockfile/issues"
+  },
+  "homepage": "https://github.com/ljharb/npm-lockfile#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "find-package-json": "^1.2.0",
+    "fs-copy-file": "^2.1.2",
+    "node-cleanup": "^2.1.2",
+    "object-inspect": "^1.6.0",
+    "rimraf": "^2.6.3",
+    "semver": "^5.7.0",
+    "tmp": "^0.1.0",
+    "util.promisify": "^1.0.0",
+    "yargs": "^13.3.0"
+  },
+  "engines": {
+    "node": ">= 6"
+  },
+  "devDependencies": {
+    "@ljharb/eslint-config": "^13.1.1",
+    "auto-changelog": "^1.14.1",
+    "eslint": "^5.16.0",
+    "tape": "^4.11.0"
+  },
+  "auto-changelog": {
+    "output": "CHANGELOG.md",
+    "unreleased": false,
+    "commitLimit": false,
+    "backfillLimit": false
+  }
 }
