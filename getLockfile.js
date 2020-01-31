@@ -21,11 +21,11 @@ module.exports = function getLockfile(packageFile, date, { npmNeeded, logger = (
 	}
 	const tmpDirP = getProjectTempDir({ npmNeeded, logger });
 	const npmRC = path.join(path.dirname(packageFile), '.npmrc');
-	const copyPkg = tmpDirP.then(tmpDir => {
+	const copyPkg = tmpDirP.then((tmpDir) => {
 		logger(chalk.blue(`Creating \`package.json\` in temp dir for ${date || '“now”'} lockfile`));
 		return Promise.all([
 			copyFile(packageFile, path.join(tmpDir, 'package.json')),
-			copyFile(npmRC, path.join(tmpDir, '.npmrc')).catch(err => {
+			copyFile(npmRC, path.join(tmpDir, '.npmrc')).catch((err) => {
 				if (!err || !(/^ENOENT: no such file or directory/).test(err.message)) {
 					throw err;
 				}
@@ -35,14 +35,14 @@ module.exports = function getLockfile(packageFile, date, { npmNeeded, logger = (
 	return Promise.all([tmpDirP, copyPkg]).then(([tmpDir]) => new Promise((resolve, reject) => {
 		const PATH = path.join(tmpDir, '../node_modules/.bin');
 		logger(chalk.blue(`Running npm install to create lockfile for ${date || '“now”'}...`));
-		exec(`npm install --package-lock --package-lock-only${date ? ` --before=${date}` : ''}`, { cwd: tmpDir, env: { PATH: `${PATH}:${process.env.PATH}` } }, err => {
+		exec(`npm install --package-lock --package-lock-only${date ? ` --before=${date}` : ''}`, { cwd: tmpDir, env: { PATH: `${PATH}:${process.env.PATH}` } }, (err) => {
 			if (err) {
 				reject(err);
 			} else {
 				resolve(tmpDir);
 			}
 		});
-	})).then(tmpDir => {
+	})).then((tmpDir) => {
 		logger(chalk.blue(`Reading lockfile contents for ${date || '“now”'}...`));
 		const lockfile = path.join(tmpDir, 'package-lock.json');
 		return readFile(lockfile, { encoding: 'utf-8' });

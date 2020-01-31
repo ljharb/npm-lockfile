@@ -29,7 +29,7 @@ const getRootTempDir = function getRootTempDir(npmNeeded, logger = () => {}) {
 			resolve(tmpDir);
 			cleanupHandlers.push(cleanup);
 			nodeCleanup(finalCleanup);
-		})).then(tmpDir => {
+		})).then((tmpDir) => {
 			const npmV = execSync('npm --version', { encoding: 'utf-8', cwd: tmpDir }).trim();
 			logger(`${chalk.blue('Checking npm version:')} \`npm --version\` -> v${npmV}`);
 			if (!semver.satisfies(npmV, npmNeeded)) {
@@ -47,7 +47,7 @@ const getRootTempDir = function getRootTempDir(npmNeeded, logger = () => {}) {
 					cleanupHandlers.unshift(() => {
 						rimraf.sync(path.join(tmpDir, '*'));
 					});
-					exec('npm install --no-package-lock --silent >/dev/null', { cwd: tmpDir }, err => {
+					exec('npm install --no-package-lock --silent >/dev/null', { cwd: tmpDir }, (err) => {
 						if (err) {
 							return reject(err);
 						}
@@ -62,7 +62,7 @@ const getRootTempDir = function getRootTempDir(npmNeeded, logger = () => {}) {
 };
 
 module.exports = function getProjectTempDir({ npmNeeded = '^6.9.0-0', logger = undefined } = {}) {
-	return getRootTempDir(npmNeeded, logger).then(rootDir => {
+	return getRootTempDir(npmNeeded, logger).then((rootDir) => {
 		const projectDir = path.join(rootDir, 'XXXXXX');
 		return new Promise((resolve, reject) => tmp.dir({ template: projectDir }, (err, tmpDir, cleanup) => {
 			if (err) {

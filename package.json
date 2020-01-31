@@ -4,6 +4,7 @@
 	"description": "Safely generate an npm lockfile and output it to the filename of your choice.",
 	"bin": "./bin.js",
 	"scripts": {
+		"prepublish": "safe-publish-latest",
 		"version": "auto-changelog && git add CHANGELOG.md",
 		"postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\"",
 		"lint": "eslint .",
@@ -48,10 +49,11 @@
 		"node": ">= 6"
 	},
 	"devDependencies": {
-		"@ljharb/eslint-config": "^15.1.0",
+		"@ljharb/eslint-config": "^16.0.0",
 		"auto-changelog": "^1.16.2",
 		"eslint": "^6.8.0",
-		"tape": "^5.0.0-next.3"
+		"safe-publish-latest": "^1.1.4",
+		"tape": "^5.0.0-next.4"
 	},
 	"auto-changelog": {
 		"output": "CHANGELOG.md",
