@@ -5,6 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.0.3](https://github.com/ljharb/npm-lockfile/compare/v2.0.2...v2.0.3) - 2020-09-08
+
+### Commits
+
+- [Tests] use shared travis-ci configs [`bd131e4`](https://github.com/ljharb/npm-lockfile/commit/bd131e41dc7bbf4f6eebb7373cdca0a3b19acdfc)
+- [meta] reformat package.json [`ef89f2a`](https://github.com/ljharb/npm-lockfile/commit/ef89f2a71faf57dc642400059a7c54f8205c7061)
+- [meta] add `funding` field [`7a98be5`](https://github.com/ljharb/npm-lockfile/commit/7a98be5dc42f42e1dc304e33d9b52d06beafcec5)
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `aud`, `auto-changelog`, `tape` [`12e8eaa`](https://github.com/ljharb/npm-lockfile/commit/12e8eaa101676ecb23a436402ad0c42b56a0aaa4)
+- [meta] update `auto-changelog` config [`06c2012`](https://github.com/ljharb/npm-lockfile/commit/06c2012db914fed4021b0a8b950e54056a70972d)
+- [Dev Deps] update `@ljharb/eslint-config`, `tape`; add `safe-publish-latest` [`f207db2`](https://github.com/ljharb/npm-lockfile/commit/f207db24759b15a9a148744786164359ddc02586)
+- [Fix] `getLockfile`: inherit `NODE_ENV` env variable for `npm install` [`a0a597c`](https://github.com/ljharb/npm-lockfile/commit/a0a597c77d5b469ed8ad9660c841f6b22113de10)
+- [actions] add automatic rebasing / merge commit blocking [`1ab7f55`](https://github.com/ljharb/npm-lockfile/commit/1ab7f55dfde4ddb6a63c5230f3028010dd324ede)
+- [actions] add "Allow Edits" workflow [`d3b9dfd`](https://github.com/ljharb/npm-lockfile/commit/d3b9dfd373595922c36692ed868080091b7cb1ee)
+- [Deps] update `object-inspect`, `rimraf`, `semver` [`7e0db68`](https://github.com/ljharb/npm-lockfile/commit/7e0db6880aff6212965c71c73c2d47b2815e58e7)
+- [Deps] update `rimraf`, `util.promisify`, `yargs` [`7256f27`](https://github.com/ljharb/npm-lockfile/commit/7256f2799d923fbf58499595bfd2f19140455c01)
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `tape` [`4ae68d0`](https://github.com/ljharb/npm-lockfile/commit/4ae68d0c1e909ba43f66d7c1e8d8303ed438dc88)
+- [Dev Deps] update `aud`, `tape` [`a7589e9`](https://github.com/ljharb/npm-lockfile/commit/a7589e9951a6caea0ccf42c17421a3a05f964998)
+- [Deps] update `rimraf`, `yargs` [`80b30c2`](https://github.com/ljharb/npm-lockfile/commit/80b30c2de3089e98f5d7be0a76313408951708ad)
+- [Dev Deps] update `auto-changelog`, `tape` [`9d30fc6`](https://github.com/ljharb/npm-lockfile/commit/9d30fc65612a53834fc1eeeb3572ea9c2deb7806)
+- [Tests] only audit prod deps [`26eeb8f`](https://github.com/ljharb/npm-lockfile/commit/26eeb8f435c3b4e668841d74d352633ccba5bc0d)
+- [Deps] update `object-inspect` [`2a440df`](https://github.com/ljharb/npm-lockfile/commit/2a440df1a6e05686a6e4eb273bccc2e4eddf4360)
+- [actions] switch Automatic Rebase workflow to `pull_request_target` event [`52a681d`](https://github.com/ljharb/npm-lockfile/commit/52a681d537dbf0f51590e341002e2e7c5fe624a9)
+- [Dev Deps] update `auto-changelog` [`b043d7f`](https://github.com/ljharb/npm-lockfile/commit/b043d7f910483f4b7d16e05504bc9364ce2ccc3c)
+
 ## [v2.0.2](https://github.com/ljharb/npm-lockfile/compare/v2.0.1...v2.0.2) - 2019-07-22
 
 ### Commits
