@@ -22,14 +22,17 @@ let rootTempDir;
 const getRootTempDir = function getRootTempDir(npmNeeded, logger = () => {}) {
 	if (!rootTempDir) {
 		logger(chalk.blue('Creating root temp directory, to hold temporary lockfiles...'));
-		rootTempDir = new Promise((resolve, reject) => tmp.dir((err, tmpDir, cleanup) => {
-			if (err) {
-				return reject(err);
-			}
-			resolve(tmpDir);
-			cleanupHandlers.push(cleanup);
-			nodeCleanup(finalCleanup);
-		})).then((tmpDir) => {
+		rootTempDir = new Promise((resolve, reject) => {
+			tmp.dir((err, tmpDir, cleanup) => {
+				if (err) {
+					reject(err);
+				} else {
+					resolve(tmpDir);
+					cleanupHandlers.push(cleanup);
+					nodeCleanup(finalCleanup);
+				}
+			});
+		}).then((tmpDir) => {
 			const npmV = execSync('npm --version', { encoding: 'utf-8', cwd: tmpDir }).trim();
 			logger(`${chalk.blue('Checking npm version:')} \`npm --version\` -> v${npmV}`);
 			if (!semver.satisfies(npmV, npmNeeded)) {
@@ -64,12 +67,15 @@ const getRootTempDir = function getRootTempDir(npmNeeded, logger = () => {}) {
 module.exports = function getProjectTempDir({ npmNeeded = '^6.9.0-0', logger = undefined } = {}) {
 	return getRootTempDir(npmNeeded, logger).then((rootDir) => {
 		const projectDir = path.join(rootDir, 'XXXXXX');
-		return new Promise((resolve, reject) => tmp.dir({ template: projectDir }, (err, tmpDir, cleanup) => {
-			if (err) {
-				return reject(err);
-			}
-			resolve(tmpDir);
-			cleanupHandlers.unshift(cleanup);
-		}));
+		return new Promise((resolve, reject) => {
+			tmp.dir({ template: projectDir }, (err, tmpDir, cleanup) => {
+				if (err) {
+					reject(err);
+				} else {
+					resolve(tmpDir);
+					cleanupHandlers.unshift(cleanup);
+				}
+			});
+		});
 	});
 };
