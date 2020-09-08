@@ -12,7 +12,11 @@ const readFile = promisify(require('fs').readFile);
 
 const getProjectTempDir = require('./getProjectTempDir');
 
-module.exports = function getLockfile(packageFile, date, { npmNeeded, logger = () => {} } = {}) {
+module.exports = function getLockfile(packageFile, date, {
+	npmNeeded,
+	only,
+	logger = () => {},
+} = {}) {
 	if (typeof packageFile !== 'string' || packageFile.length === 0) {
 		return Promise.reject(chalk.red(`\`packageFile\` must be a non-empty string; got ${inspect(packageFile)}`));
 	}
@@ -35,13 +39,23 @@ module.exports = function getLockfile(packageFile, date, { npmNeeded, logger = (
 	return Promise.all([tmpDirP, copyPkg]).then(([tmpDir]) => new Promise((resolve, reject) => {
 		const PATH = path.join(tmpDir, '../node_modules/.bin');
 		logger(chalk.blue(`Running npm install to create lockfile for ${date || '“now”'}...`));
-		exec(`npm install --package-lock --package-lock-only${date ? ` --before=${date}` : ''}`, { cwd: tmpDir, env: { PATH: `${PATH}:${process.env.PATH}` } }, (err) => {
-			if (err) {
-				reject(err);
-			} else {
-				resolve(tmpDir);
+		exec(
+			`npm install --package-lock --package-lock-only${date ? ` --before=${date}` : ''}${only ? ` --only=${only}` : ''}`,
+			{
+				cwd: tmpDir,
+				env: {
+					PATH: `${PATH}:${process.env.PATH}`,
+					NODE_ENV: process.env.NODE_ENV,
+				},
+			},
+			(err) => {
+				if (err) {
+					reject(err);
+				} else {
+					resolve(tmpDir);
+				}
 			}
-		});
+		);
 	})).then((tmpDir) => {
 		logger(chalk.blue(`Reading lockfile contents for ${date || '“now”'}...`));
 		const lockfile = path.join(tmpDir, 'package-lock.json');
