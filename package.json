@@ -10,7 +10,7 @@
 		"lint": "eslint .",
 		"pretest": "npm run lint",
 		"test": "npm run tests-only",
-		"tests-only": "node test",
+		"tests-only": "nyc tape 'test/**'",
 		"posttest": "npx aud --production"
 	},
 	"repository": {
@@ -53,6 +53,7 @@
 		"aud": "^1.1.2",
 		"auto-changelog": "^2.2.0",
 		"eslint": "^7.8.1",
+		"nyc": "^10.3.2",
 		"safe-publish-latest": "^1.1.4",
 		"tape": "^5.0.1"
 	},
