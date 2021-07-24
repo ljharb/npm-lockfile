@@ -16,6 +16,6 @@ test('simple test', (t) => {
 	const lockActual = readFileSync(lockPath, { encoding: 'utf-8' });
 	t.ok(lockActual, 'lockfile produced by npm');
 	unlinkSync(lockPath);
-	t.equal(lockActual, lockPackage, 'actual === package');
+	t.deepEqual(JSON.parse(lockActual), JSON.parse(lockPackage), 'actual =~= package');
 	t.end();
 });
