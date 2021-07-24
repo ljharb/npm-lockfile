@@ -52,7 +52,7 @@
 		"@ljharb/eslint-config": "^17.6.0",
 		"aud": "^1.1.5",
 		"auto-changelog": "^2.3.0",
-		"eslint": "^7.27.0",
+		"eslint": "^7.31.0",
 		"nyc": "^10.3.2",
 		"safe-publish-latest": "^1.1.4",
 		"tape": "^5.2.2"
