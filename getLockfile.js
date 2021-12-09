@@ -40,7 +40,7 @@ module.exports = function getLockfile(packageFile, date, {
 		const PATH = path.join(tmpDir, '../node_modules/.bin');
 		logger(chalk.blue(`Running npm install to create lockfile for ${date || '“now”'}...`));
 		exec(
-			`npm install --package-lock --package-lock-only${date ? ` --before=${date}` : ''}${only ? ` --only=${only}` : ''}`,
+			`npm install --ignore-scripts --package-lock --package-lock-only${date ? ` --before=${date}` : ''}${only ? ` --only=${only}` : ''}`,
 			{
 				cwd: tmpDir,
 				env: {
