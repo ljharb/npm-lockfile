@@ -5,6 +5,30 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v2.0.4](https://github.com/ljharb/npm-lockfile/compare/v2.0.3...v2.0.4) - 2021-12-09
+
+### Commits
+
+- [actions] reuse common workflows [`4f74157`](https://github.com/ljharb/npm-lockfile/commit/4f74157331f0bc6153dff9a3a70c792993f99e44)
+- [Tests] migrate tests to Github Actions [`de09912`](https://github.com/ljharb/npm-lockfile/commit/de09912a0df3290eac9aad525cc63a08ff06d734)
+- [meta] do not publish workflow files [`da561c4`](https://github.com/ljharb/npm-lockfile/commit/da561c4a83928c89b2385fe44b58b9c95a38a405)
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `safe-publish-latest`, `tape` [`0323b72`](https://github.com/ljharb/npm-lockfile/commit/0323b72982630d1ba8334e6a0cd2e125526fd81a)
+- [readme] update badges [`f6fa0d4`](https://github.com/ljharb/npm-lockfile/commit/f6fa0d45558b3b7666423367a1d5b2fde44b3dbc)
+- [actions] update workflows [`72fa023`](https://github.com/ljharb/npm-lockfile/commit/72fa0233f9b00e2988bf9be0cddf64ddabdef169)
+- [actions] use `node/install` instead of `node/run`; use `codecov` action [`8d2a972`](https://github.com/ljharb/npm-lockfile/commit/8d2a972a3d6daddd115ea095ad0fcbd6973d3554)
+- [Tests] run `nyc` on tests by default [`6aff286`](https://github.com/ljharb/npm-lockfile/commit/6aff2860df6a0ed31e85b277ec046faf330e55ed)
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `aud`, `auto-changelog`, `tape` [`b82a93b`](https://github.com/ljharb/npm-lockfile/commit/b82a93bc89c4079ef188cab9ca20c0134e721b66)
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `tape` [`1f3a704`](https://github.com/ljharb/npm-lockfile/commit/1f3a70476bc06d4d1abe23c61e5a42a08864b2f5)
+- [Dev Deps] update `aud`, `auto-changelog`, `eslint` [`e73a237`](https://github.com/ljharb/npm-lockfile/commit/e73a237e7608785045de5d1daa392a169afe814e)
+- [actions] update codecov uploader [`90b099c`](https://github.com/ljharb/npm-lockfile/commit/90b099c54bf17585ffe31f99063c494673667fad)
+- [Deps] update `object-inspect`, `util.promisify` [`790ab2f`](https://github.com/ljharb/npm-lockfile/commit/790ab2f64d962e7b020eb11a1a967aacbdf71478)
+- [Deps] update `object-inspect` [`91cb808`](https://github.com/ljharb/npm-lockfile/commit/91cb8087bf8227c30c74ff11961fbdc814364257)
+- [Fix] `getLockfile`: use `--ignore-scripts` when generating a lockfile [`0587433`](https://github.com/ljharb/npm-lockfile/commit/058743323f19cf724d13732915021fb43b9442d5)
+- [Tests] use the parsed JSON instead [`3c90cb7`](https://github.com/ljharb/npm-lockfile/commit/3c90cb702faa568cc1b150b2e7d71a01587eb6d7)
+- [Deps] update `object-inspect` [`9362fa5`](https://github.com/ljharb/npm-lockfile/commit/9362fa53e2a29e5725b42fe9241dd26eeb8949c4)
+- [Dev Deps] update `eslint` [`eea1019`](https://github.com/ljharb/npm-lockfile/commit/eea10193a45d2ea9af3a81c71df50849d703a7f3)
+- [meta] add `audit-level` [`afe1dac`](https://github.com/ljharb/npm-lockfile/commit/afe1dacf0681daeee72c7d4eef002359153149c6)
+
 ## [v2.0.3](https://github.com/ljharb/npm-lockfile/compare/v2.0.2...v2.0.3) - 2020-09-08
 
 ### Commits
