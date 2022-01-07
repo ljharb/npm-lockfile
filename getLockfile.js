@@ -5,13 +5,13 @@ const inspect = require('object-inspect');
 const colors = require('colors/safe');
 
 const { Arborist } = require('@npmcli/arborist');
-const { statSync } = require('fs');
+const { stat } = require('fs').promises;
 
 module.exports = async function getLockfile(packageFile, date = void undefined, { only } = {}) {
 	if (typeof packageFile !== 'string' || packageFile.length === 0) {
 		throw colors.red(`\`packageFile\` must be a non-empty string; got ${inspect(packageFile)}`);
 	}
-	if (!statSync(packageFile).isFile()) {
+	if (!(await stat(packageFile)).isFile()) {
 		throw colors.red('`packageFile` must be a file that exists');
 	}
 	if (typeof date !== 'undefined' && !new Date(date).getTime()) {

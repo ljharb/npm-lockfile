@@ -2,12 +2,11 @@
 
 'use strict';
 
-const promisify = require('util.promisify');
 const colors = require('colors/safe');
 const finder = require('find-package-json');
 
 const path = require('path');
-const writeFile = promisify(require('fs').writeFile);
+const { writeFile } = require('fs').promises;
 
 const { filename } = finder(process.cwd()).next();
 
