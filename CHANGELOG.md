@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v3.0.0](https://github.com/ljharb/npm-lockfile/compare/v2.0.4...v3.0.0) - 2022-01-06
+
+### Commits
+
+- [Breaking] `getLockfile`: use arborist instead of shelling out to `npm` [`9d8897e`](https://github.com/ljharb/npm-lockfile/commit/9d8897ea55e79f350d20a0f1d61f78fa80a283c9)
+- [Breaking] remove unused `getProjectTempDir` [`1548f7c`](https://github.com/ljharb/npm-lockfile/commit/1548f7ce5708908b37da780da7d55ca9aa32bd17)
+- [Refactor] switch from `chalk` to `colors` [`cdd2e35`](https://github.com/ljharb/npm-lockfile/commit/cdd2e3526969bb0b023accc86a9bd4e8773023b8)
+- [Deps] update `object-inspect`, `yargs` [`81dcab7`](https://github.com/ljharb/npm-lockfile/commit/81dcab75d5af1995d5f25b9a5a086f99507b1aca)
+- [Refactor] use `fs.promises` instead of `util.promisify` [`160ad35`](https://github.com/ljharb/npm-lockfile/commit/160ad35df1a6c4a27bf2f17ea786563b04be7f2a)
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `tape` [`c236812`](https://github.com/ljharb/npm-lockfile/commit/c23681294fb66bae81a078a9e1cf17ca76bd000e)
+- [Breaking] add "exports" [`b4444a3`](https://github.com/ljharb/npm-lockfile/commit/b4444a3d9e0039ff815999320fd8877e64b91aac)
+
 ## [v2.0.4](https://github.com/ljharb/npm-lockfile/compare/v2.0.3...v2.0.4) - 2021-12-09
 
 ### Commits
