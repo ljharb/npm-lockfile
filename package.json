@@ -3,6 +3,10 @@
 	"version": "2.0.4",
 	"description": "Safely generate an npm lockfile and output it to the filename of your choice.",
 	"bin": "./bin.js",
+	"exports": {
+		"./getLockfile": "./getLockfile.js",
+		"./package.json": "./package.json"
+	},
 	"scripts": {
 		"prepublishOnly": "safe-publish-latest",
 		"prepublish": "not-in-publish || npm run prepublishOnly",
