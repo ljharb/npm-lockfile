@@ -3,7 +3,7 @@
 'use strict';
 
 const promisify = require('util.promisify');
-const chalk = require('chalk');
+const colors = require('colors/safe');
 const finder = require('find-package-json');
 
 const path = require('path');
@@ -48,5 +48,5 @@ const {
 
 getLockfile(pkg, date === 'now' ? undefined : date, { logger: console.log.bind(console), npmNeeded: '^6.9.0-0' })
 	.then((lockfile) => writeFile(output, lockfile))
-	.then(() => { console.log(chalk.green('Lockfile contents written!')); })
+	.then(() => { console.log(colors.green('Lockfile contents written!')); })
 	.catch((err) => console.error(err));

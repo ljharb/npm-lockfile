@@ -5,7 +5,7 @@ const nodeCleanup = require('node-cleanup');
 const semver = require('semver');
 const promisify = require('util.promisify');
 const rimraf = require('rimraf');
-const chalk = require('chalk');
+const colors = require('colors/safe');
 
 const path = require('path');
 const { exec, execSync } = require('child_process');
@@ -21,7 +21,7 @@ const finalCleanup = function finalCleanup() {
 let rootTempDir;
 const getRootTempDir = function getRootTempDir(npmNeeded, logger = () => {}) {
 	if (!rootTempDir) {
-		logger(chalk.blue('Creating root temp directory, to hold temporary lockfiles...'));
+		logger(colors.blue('Creating root temp directory, to hold temporary lockfiles...'));
 		rootTempDir = new Promise((resolve, reject) => {
 			tmp.dir((err, tmpDir, cleanup) => {
 				if (err) {
@@ -34,7 +34,7 @@ const getRootTempDir = function getRootTempDir(npmNeeded, logger = () => {}) {
 			});
 		}).then((tmpDir) => {
 			const npmV = execSync('npm --version', { encoding: 'utf-8', cwd: tmpDir }).trim();
-			logger(`${chalk.blue('Checking npm version:')} \`npm --version\` -> v${npmV}`);
+			logger(`${colors.blue('Checking npm version:')} \`npm --version\` -> v${npmV}`);
 			if (!semver.satisfies(npmV, npmNeeded)) {
 				const pkgContents = {
 					private: true,
