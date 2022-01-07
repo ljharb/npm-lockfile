@@ -14,11 +14,9 @@ const { filename } = finder(process.cwd()).next();
 const getLockfile = require('./getLockfile');
 
 const {
-	argv: {
-		output,
-		date,
-		package: pkg,
-	},
+	output,
+	date,
+	package: pkg,
 } = require('yargs')
 	.help()
 	.option('date', {
@@ -44,7 +42,8 @@ const {
 		describe: 'output file path',
 		normalize: true,
 		demandOption: true,
-	});
+	})
+	.parse();
 
 getLockfile(pkg, date === 'now' ? undefined : date, { logger: console.log.bind(console), npmNeeded: '^6.9.0-0' })
 	.then((lockfile) => writeFile(output, lockfile))
