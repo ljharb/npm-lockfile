@@ -35,7 +35,7 @@
 	},
 	"homepage": "https://github.com/ljharb/npm-lockfile#readme",
 	"dependencies": {
-		"colors": "^1.4.0",
+		"colors": "=1.4.0",
 		"find-package-json": "^1.2.0",
 		"fs-copy-file": "^2.1.2",
 		"node-cleanup": "^2.1.2",
