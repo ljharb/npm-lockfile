@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v3.0.1](https://github.com/ljharb/npm-lockfile/compare/v3.0.0...v3.0.1) - 2022-01-09
+
+### Commits
+
+- [Fix] pin `colors` [`9405d00`](https://github.com/ljharb/npm-lockfile/commit/9405d004430e1f597ea34608ba532d83c62c1e39)
+
 ## [v3.0.0](https://github.com/ljharb/npm-lockfile/compare/v2.0.4...v3.0.0) - 2022-01-06
 
 ### Commits
