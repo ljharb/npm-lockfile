@@ -25,13 +25,9 @@ module.exports = async function getLockfile(packageFile, date = void undefined, 
 		only,
 	});
 
-	const tree = await arb.buildIdealTree();
+	const { meta } = await arb.buildIdealTree();
 
-	await tree.meta.commit();
+	await meta.commit();
 
-	// TODO: remove once X is released in arborist
-	// eslint-disable-next-line no-restricted-properties
-	tree.meta.indent = tree.package[Symbol.for('indent')];
-
-	return String(tree.meta);
+	return String(meta);
 };

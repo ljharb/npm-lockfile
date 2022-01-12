@@ -39,7 +39,7 @@
 	},
 	"homepage": "https://github.com/ljharb/npm-lockfile#readme",
 	"dependencies": {
-		"@npmcli/arborist": "^4.2.0",
+		"@npmcli/arborist": "^4.2.1",
 		"colors": "=1.4.0",
 		"find-package-json": "^1.2.0",
 		"object-inspect": "^1.12.0",
