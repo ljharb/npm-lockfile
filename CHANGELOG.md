@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v3.0.2](https://github.com/ljharb/npm-lockfile/compare/v3.0.1...v3.0.2) - 2022-01-20
+
+### Commits
+
+- [Refactor] update `@npmcli/arborist`; remove indentation workaround [`e9dc524`](https://github.com/ljharb/npm-lockfile/commit/e9dc5240341cbf8f5b97e258bb830b21622e9ce9)
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `aud`, `tape` [`64fcd35`](https://github.com/ljharb/npm-lockfile/commit/64fcd35ddecdd1c8c4972327a91d19d659dadbaf)
+
 ## [v3.0.1](https://github.com/ljharb/npm-lockfile/compare/v3.0.0...v3.0.1) - 2022-01-09
 
 ### Commits
