@@ -23,6 +23,9 @@ module.exports = function getLockfile(packageFile, date, {
 	if (typeof date !== 'undefined' && !new Date(date).getTime()) {
 		return Promise.reject(colors.red(`\`date\` must be a valid Date format if provided; got ${inspect(date)}`));
 	}
+	if (only && only !== 'prod' && only !== 'production') {
+		return Promise.reject(colors.red('`only`, when provided, must be "prod" or "production"'));
+	}
 	const tmpDirP = getProjectTempDir({ npmNeeded, logger });
 	const npmRC = path.join(path.dirname(packageFile), '.npmrc');
 	const copyPkg = tmpDirP.then((tmpDir) => {
