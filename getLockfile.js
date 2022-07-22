@@ -7,7 +7,7 @@ const colors = require('colors/safe');
 const { Arborist } = require('@npmcli/arborist');
 const { stat } = require('fs').promises;
 
-module.exports = async function getLockfile(packageFile, date = void undefined, { only } = {}) {
+module.exports = async function getLockfile(packageFile, date = void undefined, options = {}) {
 	if (typeof packageFile !== 'string' || packageFile.length === 0) {
 		throw colors.red(`\`packageFile\` must be a non-empty string; got ${inspect(packageFile)}`);
 	}
@@ -22,7 +22,7 @@ module.exports = async function getLockfile(packageFile, date = void undefined, 
 	const arb = new Arborist({
 		path: pkgDir,
 		before: date,
-		only,
+		...options,
 	});
 
 	const { meta } = await arb.buildIdealTree();
