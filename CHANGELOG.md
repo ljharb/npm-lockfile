@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v3.0.3](https://github.com/ljharb/npm-lockfile/compare/v3.0.2...v3.0.3) - 2022-08-09
+
+### Commits
+
+- [meta] use `npmignore` to autogenerate an npmignore file [`e4bc39d`](https://github.com/ljharb/npm-lockfile/commit/e4bc39d347c19452437bfcf13d8592f44ef80b4b)
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `aud`, `auto-changelog`, `tape` [`38f99c3`](https://github.com/ljharb/npm-lockfile/commit/38f99c3374ca4e9bd75f3ec34f3edb249eb391cf)
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `auto-changelog`, `tape` [`fc33692`](https://github.com/ljharb/npm-lockfile/commit/fc33692641cd026b49298c892751365436094f0a)
+- [Deps] update `@npm/arborist` [`b809c0c`](https://github.com/ljharb/npm-lockfile/commit/b809c0c0f1b0aeb81138cf46c1325779d5ec47d2)
+- [Deps] update `@npmcli/arborist`, `object-inspect`, `yargs` [`5741fe4`](https://github.com/ljharb/npm-lockfile/commit/5741fe44c8eb98ea9997de730d220a546ae733db)
+- [Fix] reject invalid `only` values [`bfdb848`](https://github.com/ljharb/npm-lockfile/commit/bfdb84813260f0edbf759f2fde1e8c816c1478b8)
+- [Deps] update `@npmcli/arborist` [`1d8c174`](https://github.com/ljharb/npm-lockfile/commit/1d8c174a86bb6d62d75a729203d86e21d5dabc47)
+- [Refactor] `bin`: remove unused logger/npmNeeded options (as of v3) [`2040465`](https://github.com/ljharb/npm-lockfile/commit/2040465005800d170674a8ea8df0d310d3a5e365)
+- Merge tag 'v2.0.5' into main [`6f4ee2d`](https://github.com/ljharb/npm-lockfile/commit/6f4ee2d7b6654b7b53e6c53bfc56bb3bfef32117)
+- [Deps] update `object-inspect` [`d96f582`](https://github.com/ljharb/npm-lockfile/commit/d96f582ac65c12bae207043c72d998c1a1983f01)
+- [Fix] pin `colors` [`57c2eeb`](https://github.com/ljharb/npm-lockfile/commit/57c2eeb4683197eb5aa94a30bc876fedc1bbed6b)
+
 ## [v3.0.2](https://github.com/ljharb/npm-lockfile/compare/v3.0.1...v3.0.2) - 2022-01-20
 
 ### Commits
@@ -18,17 +34,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - [Fix] pin `colors` [`9405d00`](https://github.com/ljharb/npm-lockfile/commit/9405d004430e1f597ea34608ba532d83c62c1e39)
 
-## [v3.0.0](https://github.com/ljharb/npm-lockfile/compare/v2.0.4...v3.0.0) - 2022-01-06
+## [v3.0.0](https://github.com/ljharb/npm-lockfile/compare/v2.0.5...v3.0.0) - 2022-01-06
 
 ### Commits
 
 - [Breaking] `getLockfile`: use arborist instead of shelling out to `npm` [`9d8897e`](https://github.com/ljharb/npm-lockfile/commit/9d8897ea55e79f350d20a0f1d61f78fa80a283c9)
 - [Breaking] remove unused `getProjectTempDir` [`1548f7c`](https://github.com/ljharb/npm-lockfile/commit/1548f7ce5708908b37da780da7d55ca9aa32bd17)
-- [Refactor] switch from `chalk` to `colors` [`cdd2e35`](https://github.com/ljharb/npm-lockfile/commit/cdd2e3526969bb0b023accc86a9bd4e8773023b8)
 - [Deps] update `object-inspect`, `yargs` [`81dcab7`](https://github.com/ljharb/npm-lockfile/commit/81dcab75d5af1995d5f25b9a5a086f99507b1aca)
 - [Refactor] use `fs.promises` instead of `util.promisify` [`160ad35`](https://github.com/ljharb/npm-lockfile/commit/160ad35df1a6c4a27bf2f17ea786563b04be7f2a)
 - [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `tape` [`c236812`](https://github.com/ljharb/npm-lockfile/commit/c23681294fb66bae81a078a9e1cf17ca76bd000e)
 - [Breaking] add "exports" [`b4444a3`](https://github.com/ljharb/npm-lockfile/commit/b4444a3d9e0039ff815999320fd8877e64b91aac)
+
+## [v2.0.5](https://github.com/ljharb/npm-lockfile/compare/v2.0.4...v2.0.5) - 2022-03-01
+
+### Commits
+
+- [Refactor] switch from `chalk` to `colors` [`cdd2e35`](https://github.com/ljharb/npm-lockfile/commit/cdd2e3526969bb0b023accc86a9bd4e8773023b8)
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `aud`, `auto-changelog`, `tape` [`38f99c3`](https://github.com/ljharb/npm-lockfile/commit/38f99c3374ca4e9bd75f3ec34f3edb249eb391cf)
+- [Fix] reject invalid `only` values [`bfdb848`](https://github.com/ljharb/npm-lockfile/commit/bfdb84813260f0edbf759f2fde1e8c816c1478b8)
+- [Deps] update `object-inspect` [`d96f582`](https://github.com/ljharb/npm-lockfile/commit/d96f582ac65c12bae207043c72d998c1a1983f01)
+- [Fix] pin `colors` [`57c2eeb`](https://github.com/ljharb/npm-lockfile/commit/57c2eeb4683197eb5aa94a30bc876fedc1bbed6b)
 
 ## [v2.0.4](https://github.com/ljharb/npm-lockfile/compare/v2.0.3...v2.0.4) - 2021-12-09
 
