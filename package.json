@@ -1,6 +1,6 @@
 {
 	"name": "npm-lockfile",
-	"version": "3.0.3",
+	"version": "3.0.4",
 	"description": "Safely generate an npm lockfile and output it to the filename of your choice.",
 	"bin": "./bin.js",
 	"exports": {

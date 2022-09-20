@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v3.0.4](https://github.com/ljharb/npm-lockfile/compare/v3.0.3...v3.0.4) - 2022-09-20
+
+### Commits
+
+- [Dev Deps] update `tape` [`dd77fe4`](https://github.com/ljharb/npm-lockfile/commit/dd77fe4bed10e6d7a277b3fc041f33f0fa657088)
+
 ## [v3.0.3](https://github.com/ljharb/npm-lockfile/compare/v3.0.2...v3.0.3) - 2022-08-09
 
 ### Commits
