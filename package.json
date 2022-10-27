@@ -44,7 +44,7 @@
 		"colors": "=1.4.0",
 		"find-package-json": "^1.2.0",
 		"object-inspect": "^1.12.2",
-		"yargs": "^17.5.1"
+		"yargs": "^17.6.0"
 	},
 	"engines": {
 		"node": ">= 16 || ^14.15 || ^12.13"
