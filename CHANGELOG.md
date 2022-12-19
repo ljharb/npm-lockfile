@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v3.0.5](https://github.com/ljharb/npm-lockfile/compare/v3.0.4...v3.0.5) - 2022-12-19
+
+### Commits
+
+- [actions] update rebase action [`0ac29a9`](https://github.com/ljharb/npm-lockfile/commit/0ac29a9ee66cb64c66250fcc6fb201ab7697538b)
+- [Deps] update `yargs` [`cded56a`](https://github.com/ljharb/npm-lockfile/commit/cded56a788c5bcc4caa1a56829e38bbaf6e692cc)
+- [Dev Deps] update `aud` [`5ca72b2`](https://github.com/ljharb/npm-lockfile/commit/5ca72b21346b35e85087b853dad7350f6415923c)
+- [Deps] unpin `@npmcli/arborist` [`df8218d`](https://github.com/ljharb/npm-lockfile/commit/df8218d08b0e395b04407a5ba848fcbd17c2894d)
+- [Deps] update `yargs` [`d0e38bd`](https://github.com/ljharb/npm-lockfile/commit/d0e38bd4958c93ff2852a649cc425a461177617b)
+- [Dev Deps] update `aud` [`a6d0d7f`](https://github.com/ljharb/npm-lockfile/commit/a6d0d7ff0fd5eb524c072198963bfcda8616c7a3)
+
 ## [v3.0.4](https://github.com/ljharb/npm-lockfile/compare/v3.0.3...v3.0.4) - 2022-09-20
 
 ### Commits
