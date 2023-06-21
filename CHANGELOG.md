@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v3.0.6](https://github.com/ljharb/npm-lockfile/compare/v3.0.5...v3.0.6) - 2023-06-20
+
+### Commits
+
+- [Deps] update `object-inspect`, `yargs` [`0ab8603`](https://github.com/ljharb/npm-lockfile/commit/0ab8603626305fa8893b8d47a787081d4e74f1b1)
+- [Dev Deps] update `@ljharb/eslint-config`, `tape` [`e6ab66b`](https://github.com/ljharb/npm-lockfile/commit/e6ab66bd37618160ead1eb634f421f39feb54362)
+- Revert "[Deps] unpin `@npmcli/arborist`" [`efa3aa5`](https://github.com/ljharb/npm-lockfile/commit/efa3aa5cd5b24697e9f728a3508e4484404eefe4)
+- [Dev Deps] pin `jackspeak` since 2.1.2+ depends on npm aliases, which kill the install process in npm &lt; 6 [`00beaea`](https://github.com/ljharb/npm-lockfile/commit/00beaea9a9b38524323a9882a07eef116e8690e9)
+
 ## [v3.0.5](https://github.com/ljharb/npm-lockfile/compare/v3.0.4...v3.0.5) - 2022-12-19
 
 ### Commits
