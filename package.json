@@ -44,6 +44,7 @@
 		"colors": "=1.4.0",
 		"find-package-json": "^1.2.0",
 		"object-inspect": "^1.12.3",
+		"pacote": "=13.6.0",
 		"yargs": "^17.7.2"
 	},
 	"engines": {
