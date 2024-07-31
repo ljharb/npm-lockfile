@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v4.0.0](https://github.com/ljharb/npm-lockfile/compare/v3.0.7...v4.0.0) - 2024-07-30
+
+### Commits
+
+- [readme] fix badge URLs [`ccf1c31`](https://github.com/ljharb/npm-lockfile/commit/ccf1c31f95757dc8aff8049c0a2bc46d87ffe099)
+- [Breaking] update `@npmcli/arborist`; require node 16+ [`5690ff2`](https://github.com/ljharb/npm-lockfile/commit/5690ff2610bb1ed8d6a02a1fce886dc83373d26a)
+- [Dev Deps] update `@ljharb/eslint-config`, `aud`, `npmignore`, `tape` [`26b4121`](https://github.com/ljharb/npm-lockfile/commit/26b4121810f9bb12d5f901474c87ebd532c7ac17)
+
 ## [v3.0.7](https://github.com/ljharb/npm-lockfile/compare/v3.0.6...v3.0.7) - 2023-06-20
 
 ### Commits
