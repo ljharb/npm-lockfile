@@ -12,7 +12,7 @@ test('simple test', (t) => {
 	execSync(`"${path.join(__dirname, '../bin.js')}" -o package-lock.json --date=now`);
 	const lockPackage = readFileSync(lockPath, { encoding: 'utf-8' });
 	t.ok(lockPackage, 'lockfile produced by package');
-	execSync('npm install --package-lock --package-lock-only', { encoding: 'utf-8' });
+	execSync('npm install --package-lock --package-lock-only', { encoding: 'utf-8', cwd: path.join(__dirname, '..') });
 	const lockActual = readFileSync(lockPath, { encoding: 'utf-8' });
 	t.ok(lockActual, 'lockfile produced by npm');
 	unlinkSync(lockPath);

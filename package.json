@@ -40,22 +40,20 @@
 	},
 	"homepage": "https://github.com/ljharb/npm-lockfile#readme",
 	"dependencies": {
-		"@npmcli/arborist": "=5.2.1",
+		"@npmcli/arborist": "^7.5.4",
 		"colors": "=1.4.0",
 		"find-package-json": "^1.2.0",
-		"object-inspect": "^1.12.3",
-		"pacote": "=13.6.0",
+		"object-inspect": "^1.13.2",
 		"yargs": "^17.7.2"
 	},
 	"engines": {
-		"node": ">= 16 || ^14.15 || ^12.13"
+		"node": ">= 22 || ^20.9 || ^18.12 || ^16.14"
 	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^21.1.1",
 		"aud": "^2.0.4",
 		"auto-changelog": "^2.4.0",
 		"eslint": "=8.8.0",
-		"jackspeak": "=2.1.1",
 		"npmignore": "^0.3.1",
 		"nyc": "^10.3.2",
 		"safe-publish-latest": "^2.0.0",
