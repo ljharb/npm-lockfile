@@ -22,5 +22,5 @@ Safely generate an npm lockfile and output it to the filename of your choice.
 [downloads-url]: https://npm-stat.com/charts.html?package=npm-lockfile
 [codecov-image]: https://codecov.io/gh/ljharb/npm-lockfile/branch/main/graphs/badge.svg
 [codecov-url]: https://app.codecov.io/gh/ljharb/npm-lockfile/
-[actions-image]: https://img.shields.io/endpoint?url=https://github-actions-badge-u3jn4tfpocch.runkit.sh/ljharb/npm-lockfile
+[actions-image]: https://img.shields.io/github/check-runs/ljharb/npm-lockfile/main
 [actions-url]: https://github.com/ljharb/npm-lockfile/actions
