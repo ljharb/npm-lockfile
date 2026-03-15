@@ -19,3 +19,26 @@ test('simple test', (t) => {
 	t.deepEqual(JSON.parse(lockActual), JSON.parse(lockPackage), 'actual =~= package');
 	t.end();
 });
+
+test('invalid date', (t) => {
+	try {
+		execSync(`"${path.join(__dirname, '../bin.js')}" -o /dev/null --date=not-a-date`, { encoding: 'utf-8', stdio: 'pipe' });
+		t.fail('should have thrown');
+	} catch (e) {
+		t.ok(e.status !== 0, 'exits with non-zero status');
+		t.ok(e.stderr.indexOf('date') > -1, 'error message mentions date');
+	}
+	t.end();
+});
+
+test('specific date', (t) => {
+	execSync(`"${path.join(__dirname, '../bin.js')}" -o /dev/null --date=2024-01-01`, { encoding: 'utf-8', stdio: 'pipe' });
+	t.pass('runs with a specific date');
+	t.end();
+});
+
+test('getLockfile error is caught', (t) => {
+	execSync(`"${path.join(__dirname, '../bin.js')}" -o /dev/null --date=now --package=/nonexistent/package.json`, { encoding: 'utf-8', stdio: 'pipe' });
+	t.pass('process exits without crashing');
+	t.end();
+});
