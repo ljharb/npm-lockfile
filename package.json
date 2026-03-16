@@ -43,7 +43,7 @@
 		"@npmcli/arborist": "^7.5.4",
 		"colors": "=1.4.0",
 		"find-package-json": "^1.2.0",
-		"object-inspect": "^1.13.2",
+		"object-inspect": "^1.13.4",
 		"yargs": "^17.7.2"
 	},
 	"engines": {
