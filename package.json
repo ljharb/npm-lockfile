@@ -17,7 +17,7 @@
 		"pretest": "npm run lint",
 		"test": "npm run tests-only",
 		"tests-only": "nyc tape 'test/**'",
-		"posttest": "aud --production"
+		"posttest": "npx npm@\">= 10.2\" audit --production"
 	},
 	"repository": {
 		"type": "git",
@@ -51,7 +51,6 @@
 	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^21.1.1",
-		"aud": "^2.0.4",
 		"auto-changelog": "^2.4.0",
 		"eslint": "=8.8.0",
 		"npmignore": "^0.3.1",
